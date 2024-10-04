@@ -40,7 +40,12 @@ namespace Uppgift_6_namn_sortering
             string searchName = Console.ReadLine();
 
 
-            
+            if (string.IsNullOrWhiteSpace(searchName))
+            {
+                Console.WriteLine("Name cannot be empty. Please enter a valid name.");
+                return;
+            }
+
             if (names.Contains(searchName))
             {
                 Console.WriteLine($"{searchName} is in the list.");
@@ -49,7 +54,6 @@ namespace Uppgift_6_namn_sortering
             {
                 Console.WriteLine($"{searchName} is not in the list.");
             }
-            Console.ReadKey();
         }
     }
 }
