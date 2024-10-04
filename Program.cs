@@ -20,8 +20,27 @@ namespace Uppgift_6_namn_sortering
             Console.ReadKey();
         }
 
-        Console.WriteLine("\nEnter name to search:");
+        static List<string> InitializeNames()
+        {
+            return new List<string> { "Anna", "John", "Alice", "Bob", "Carols" };
+        }
+
+        static void DisplayNames(string title, List<string> names)
+        {
+            Console.WriteLine(title);
+            foreach (var name in names)
+            {
+                Console.WriteLine(name);
+            }
+        }
+
+        static void SearchName(List<string> names)
+        {
+            Console.WriteLine("\nEnter name to search:");
             string searchName = Console.ReadLine();
+
+
+            
             if (names.Contains(searchName))
             {
                 Console.WriteLine($"{searchName} is in the list.");
