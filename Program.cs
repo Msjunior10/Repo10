@@ -10,22 +10,17 @@ namespace Uppgift_6_namn_sortering
     {
         static void Main(string[] args)
         {
-            List<string> names = new List<string> { "Anna", "John", "Alice", "Bob", "Carols" };
-            Console.WriteLine("Original list:");
-            foreach (var name in names)
-            {
-                Console.WriteLine(name);
-            }
+            List<string> names = InitializeNames();
+            DisplayNames("Original list:", names);
 
-            names.Sort(); // Sort the names alphabetically
-            Console.WriteLine("\nSorted list:");
-            foreach (var name in names)
-            {
-                Console.WriteLine(name);
+            names.Sort(); // sorterar namnen i  alphabetsordning
+            DisplayNames("\nSorted list:", names);
 
-            }
+            SearchName(names);
+            Console.ReadKey();
+        }
 
-            Console.WriteLine("\nEnter name to search:");
+        Console.WriteLine("\nEnter name to search:");
             string searchName = Console.ReadLine();
             if (names.Contains(searchName))
             {
